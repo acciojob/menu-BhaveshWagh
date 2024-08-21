@@ -25,15 +25,20 @@ function App() {
             All
           </button>
           <button
-            className="filter-btn btn"
+            className="filter-btn"
+            id="filter-btn-1"
             onClick={() => filterItems("breakfast")}
           >
             Breakfast
           </button>
-          <button className="filter-btn" onClick={() => filterItems("lunch")}>
+          <button className="filter-btn"
+          id="filter-btn-2"
+           onClick={() => filterItems("lunch")}>
             Lunch
           </button>
-          <button className="filter-btn" onClick={() => filterItems("shakes")}>
+          <button className="filter-btn"
+          id="filter-btn-3"
+           onClick={() => filterItems("shakes")}>
             Shakes
           </button>
         </div>
