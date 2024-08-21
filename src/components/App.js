@@ -1,12 +1,11 @@
-// src/App.js
-import { useState } from "react";
-import menuItems from "../RestaurantData";
+import React, { useState } from 'react';
+import menuItems from '../RestaurantData';
 
 function App() {
   const [items, setItems] = useState(menuItems);
 
   const filterItems = (category) => {
-    if (category === "all") {
+    if (category === 'all') {
       setItems(menuItems);
     } else {
       setItems(menuItems.filter((item) => item.category === category));
@@ -21,26 +20,10 @@ function App() {
           <div className="underline"></div>
         </div>
         <div className="btn-container">
-          <button className="filter-btn" onClick={() => filterItems("all")}>
-            All
-          </button>
-          <button
-            className="filter-btn-1"
-            id="filter-btn-1"
-            onClick={() => filterItems("Breakfast")}
-          >
-            Breakfast
-          </button>
-          <button className="filter-btn-2"
-          id="filter-btn-2"
-           onClick={() => filterItems("Lunch")}>
-            Lunch
-          </button>
-          <button className="filter-btn-3"
-          id="filter-btn-3"
-           onClick={() => filterItems("Shakes")}>
-            Shakes
-          </button>
+          <button className="filter-btn" id="filter-btn-all" onClick={() => filterItems('all')}>All</button>
+          <button className="filter-btn" id="filter-btn-1" onClick={() => filterItems('breakfast')}>Breakfast</button>
+          <button className="filter-btn" id="filter-btn-2" onClick={() => filterItems('lunch')}>Lunch</button>
+          <button className="filter-btn" id="filter-btn-3" onClick={() => filterItems('shakes')}>Shakes</button>
         </div>
         <div className="section-center">
           {items.map((menuItem) => {
